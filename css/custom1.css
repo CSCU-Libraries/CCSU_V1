@@ -1,0 +1,172 @@
+/* Consortium-wide CSS customizations */ 
+
+/* Emergency Banner via stylesheet only at the very top.   MGH 3/19/2020  
+primo-explore::before {
+	content: "Due to the COVID-19 pandemic, the CSCU libraries and Connecticut State Library are experiencing service delivery interruptions. Requesting physical items is currently unavailable. Visit your library's website for details about available resources and services."; 
+	display: inline-block; 
+	background: #ecd90f; 
+	text-align: center; 
+	padding: 2px 12px 0 12px; 
+	width: 100%; 
+	font-weight: bold;
+}
+*/
+/* CCSU - custom styling to remove RefWorks link from User Area Menu per https://knowledge.exlibrisgroup.com/Primo/Knowledge_Articles/How_to_remove_the_RefWorks_link_from_the_User_Area_menu */
+.my-refworks-ctm{
+  display: none;
+}
+ 
+.my-refworks-separator-ctm{
+  display: none;
+}
+/* end Refworks menu removal section */
+/* Styling for the newly added emergency banner js component - START - SBC 08/25/20 */
+prm-topbar, prm-top-bar-before, ccsu-banner-component { background-color: #112233; z-index:100;}
+#banner-component { width:100%; margin: auto; text-align: center; background-color:#bfd9cc; opacity: 1; z-index:1000;}
+a #banner-component { text-decoration: underline; }
+/* emergency banner code issue in collection discovery fixES there is a margin-top:-60px native on this class overridden by 10px & need z-index specs - SBC - 9/17/20 */
+prm-collection-gallery-header .collection-header-inner.has-transparent-topbar {
+  margin-top: 10px;
+}
+prm-explore-main .header .transparent-top-bar div {
+  background-color: #123;
+} 
+prm-explore-main .header .transparent-top-bar::before {
+  background-color:#efefef; /*  when the orange, it overlapped much of the top of page header */
+  z-index:-1;
+}
+/* END EMERGENCY BANNER SECTION - SBC 09/17/20 */
+prm-search-result-list-after { display: block; }
+prm-search prm-search-result-list div.list-items-list div.list-spacer { 
+  min-height: 2em;
+}
+prm-search prm-search-result-list div.list-items-list div.list-spacer-small { 
+  min-height: 1em; /* Reduce the whitespace between LOAD MORE RESULTS and our Consortium Link widget. */
+}
+prm-search-result-list-after #customCSCU-consortium-search-card { 
+  padding-right: 3em;  /* Allocate space for the Previous/Next Page widget to occupy. */
+}
+.spotlight-element.layout-row { 
+  border-bottom: 1px solid gray;  /* Add a line of separation */
+}
+prm-search-result-list-after .spotlight-element .spotlight-image { 
+  margin-right: 2px;  /* Correct the positioning of our Consortium Hierarchy icon */
+}
+prm-search-result-list-after #customCSCU-consortium-search-card-bottom-spacer { 
+  min-height: 30px; 
+  height: 60px;     /* Allocate space for the mobile-phone TWEAK MY RESULTS widget to occupy. */
+}
+
+/* End of Consortium-wide CSS customizations */
+
+/* Top navigation bar */ 
+.prm-primary-bg.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-topbar .top-nav-bar {
+	background-color: #112233;
+	color: #FFFFFF;
+}
+
+/* Top navigation bar, hover-state (SIGN-IN button) */
+md-fab-toolbar md-toolbar {
+	background-color: #112233 !important; 
+	color: #FFFFFF;
+}
+
+/* prm-topbar {  for primo enhancement for alma d stuff 5/2/19, SBC  
+	height: 100px; /* increase height to accomodate logo 
+} */
+
+/* top nav bar, button text size */
+prm-main-menu[menu-type=menu] .md-button {
+	font-size: .85em;
+}
+
+/* Search bar background */
+.prm-primary-bg, prm-spinner.light-on-dark.overlay-cover:after,
+prm-search-bar, prm-browse-search-bar, prm-tags-search-bar, prm-journals-search-bar {
+  background-color: #53738c;
+}
+
+/* advanced search background */
+prm-search-bar .advanced-search-background {
+	background-color: #dde3eb;
+}
+
+prm-logo .logo-image, prm-logo img {
+    max-height: 60px;
+	margin-top: -10px; /* for primo enhancement for alma d stuff 5/2/19, SBC */
+}
+
+.md-headline {
+	font-weight: 400;
+}
+/* for iPhone Fix - added 11/27/17 
+.md-dialog-container {
+  height: 100% !important;
+  position: fixed !important;
+  top: 0px !important;
+}
+REMOVED 1/2/18
+*/
+/* Hanging indent to make long Full-Display labels easier to read. */
+prm-service-details div#item-details {
+  padding-left: 0.5em;
+}
+
+prm-service-details .section-body .flex-gt-sm-20,
+prm-service-details .section-body .layout-gt-sm-row>.flex-gt-sm-20,
+prm-service-details .section-body .layout-row>.flex-gt-sm-20 {
+  text-indent: -0.5em;
+  margin-right: 0.5em;
+} /* End of hanging indent fix.  */
+
+/* Move the Chat widget up an inch, to make room for the Page Navigation widget. EV 10-12-2021 */
+.s-lch-widget-float-btn.online {
+  bottom: 6em;
+}
+
+/* from Central package / Browse, etc., customizations) */
+@media print {        /* Improve the look of the printed page by removing clutter. */ 
+  .sidebar { display: none; }
+  .result-item-actions { display: none; }
+  .page-nav-inner { display: none; }
+  .bottom-fixed-toolbar { display: none; }
+  prm-resource-recommender { display: none; }
+  div.customCSCU.spotlight-element { display: none; } 
+} /* End of printed page tweaks. */
+
+/* No-search-results card */
+prm-no-search-result md-card-content a {
+  font-weight: 700; /* Give hyperlinks more emphasis */
+}
+
+/* Altered Browse page (for non-preferred terms) */
+prm-custom-browse-link div.browse-more-link {
+  display: inline;
+  padding-left: 0.5em;
+} 
+prm-custom-browse-link div.browse-more-link a prm-icon[link-arrow] {
+  width: 35px; /* Necessary to prevent the anchor-text from getting truncated; not sure why. */
+}
+
+prm-browse-result h3 span br.customCSCU+prm-custom-browse-link {
+  margin-left: 2.0em; /* Indent the not-first See: hyperlinks. */
+}
+
+prm-browse-result md-list-item h3>span[translate="nui.browse.crossref.see"] {
+  font-weight: 400; /* Remove the header styling on the label See: */
+  color: initial; 
+}
+/* End of CSS tweaks for Altered Browse page. */
+
+/* Begin CSS fixes for Alma Digital Collections' use at CCSU - hide sub-collection images from collection display */
+ prm-gallery-collection .collection-folder .collection-images div:nth-child(2),
+ prm-gallery-collection .collection-folder .collection-images div:nth-child(3),
+ prm-gallery-collection .collection-folder .collection-images div:nth-child(4) {
+	display: none;
+}
+.prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
+	background-color: #112233;
+	color: #FFFFFF;
+}
+
+/* End of Alma digital collections css edits */
