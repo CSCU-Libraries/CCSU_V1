@@ -1,8 +1,9 @@
+# CCSU's individual institution's Primo NUI customizations available in this package (our emergency banner & code from MH, as copied from Central Package for consortium - custom.js bug fixed 10/18/21)
 
-# The Primo New UI Customization Workflow Development Environment
+## The Primo New UI Customization Workflow Development Environment
 
 
-##Package documentation
+### Package documentation
 
 The development package allows you to configure :
 
