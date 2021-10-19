@@ -1,4 +1,6 @@
-# CCSU's individual institution's Primo NUI customizations available in this package (our emergency banner & code from MH, as copied from Central Package for consortium - custom.js bug fixed 10/18/21)
+# CCSU's individual institution's Primo NUI customizations available in this package
+
+(Emergency banner (css & js) & code from MH, as copied from Central Package for consortium - custom.js bug fixed 10/18/21 & this repo created after that)
 
 ## The Primo New UI Customization Workflow Development Environment
 
